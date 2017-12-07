@@ -65,7 +65,7 @@ articleView.handleCategoryFilter = function() {
       // Use an "attribute selector" to find those articles, and fade them in for the reader.
       $('article').hide();
       $(`article[data-category="${$(this).val()}"]`).show();
-      
+
     } else {
       // TODO: If the <select> menu was changed to an option that is blank, we should first show all the articles, except the one article we are using as a template.
 
@@ -79,7 +79,11 @@ articleView.handleMainNav = function() {
   // TODO: Add an event handler to .main-nav elements that will power the Tabs feature.
   // Clicking any .tab element should hide all the .tab-content sections, and then reveal the single .tab-content section that is associated with the clicked .tab element.
   // So: You need to dynamically build a selector string with the correct ID, based on the data available to you on the .tab element that was clicked.
-
+  $('.tab').on('click', function(){
+    $('.tab-content').hide();
+    $(`#${$(this).data('content')}`).show();
+    
+  })
   // REVIEW: Now trigger a click on the first .tab element, to set up the page.
   $('.main-nav .tab:first').click();
 };
@@ -98,4 +102,5 @@ $(document).ready(function() {
   articleView.populateFilters();
   articleView.handleAuthorFilter();
   articleView.handleCategoryFilter();
+  articleView.handleMainNav();
 })
