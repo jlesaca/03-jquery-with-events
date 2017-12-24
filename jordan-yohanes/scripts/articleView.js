@@ -46,7 +46,7 @@ articleView.handleAuthorFilter = function() {
     } else {
       // TODO: If the <select> menu was changed to an option that is blank, we should first show all the articles, except the one article we are using as a template.
       $('article').show();
-      $('article.template').hide();
+      $(`article[data-author="${$(this).val()}"]`).hide();
     }
     $('#category-filter').val(''); // can't apply more than one filter at a time.
 
