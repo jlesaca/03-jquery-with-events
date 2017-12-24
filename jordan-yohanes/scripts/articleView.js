@@ -17,7 +17,7 @@ articleView.populateFilters = function() {
       // optionTag = '<option value="' + authorName + '">' + authorName + '</option>';
       optionTag = `<option value=  "${authorName}"> ${authorName} </option>`;
 
-      if ($('#author-filter option[value="' + authorName + '"]').length === 0) {
+      if ($(`#author-filter option[value="${authorName}"]`).length === 0) {
         $('#author-filter').append(optionTag);
       }
 
