@@ -83,7 +83,6 @@ articleView.handleMainNav = function() {
   $('.main-nav .tab').on('click', function(){
     $('.tab-content').hide();
     $(`#${$(this).data('content')}`).show();
-    
   })
   // REVIEW: Now trigger a click on the first .tab element, to set up the page.
   $('.main-nav .tab:first').click();
@@ -95,7 +94,7 @@ articleView.setTeasers = function() {
 
   // TODO: Add an event handler to reveal all the hidden elements, when the .read-on link is clicked. You can go ahead and hide the "Read On" link once it has been clicked. Be sure to prevent the default link-click action!
   // Ideally, we'd attach this as just one event handler on the #articles section, and let it process (in other words... delegate) any .read-on clicks that happen within child nodes.
-  $('#articles').on('click', 'articles .read-on', function(e){
+  $('#articles').on('click', 'article .read-on', function(e){
     e.preventDefault();
 
     $(this).siblings().filter('.article-body').children().show();
@@ -103,7 +102,7 @@ articleView.setTeasers = function() {
   })
 };
 
-// TODO: Call all of the above functions, once we are sure the DOM is ready.
+// TODO: Call all of the above functions, once we are sure the DOM is ready. DONE
 $(document).ready(function() {
   //create the options
   $('.template').hide();
